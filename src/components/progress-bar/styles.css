@@ -1,0 +1,83 @@
+.progress {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.progress_item {
+    flex: 1;
+    position: relative;
+}
+
+.progress_item__step {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    background-color: #00b7bd;
+    margin-left: auto;
+    border: 2px solid #b4b4b3;
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    
+}
+
+.progress_item::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #b4b4b3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+}
+
+.progress_item.in-progress::before,
+.progress_item.done::before {
+    background-color: #00b7bd;
+}
+
+.progress_item[data-title="Step 1"]::after {
+    content: attr(data-title);
+    position: absolute;
+    top: -10px;
+    left: 5px;
+}
+
+.progress_item[data-title="Step 2"]::after,
+.progress_item[data-title="Step 3"]::after,
+.progress_item[data-title="Step 4"]::after{
+    content: attr(data-title);
+    position: absolute;
+    top: -10px;
+    right: 50px;
+}
+
+.progress_item.in-progress::after,
+.progress_item.done::after {
+    color: #00b7bd;
+}
+
+.progress_item__step.in-progress {
+    background-color: #ffffff;
+    color: #00b7bd;
+    border: 2px solid #00b7bd;
+}
+
+.progress_item__step.done {
+    background-color: #00b7bd;
+    border: 2px solid #00b7bd;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+    .progress_item::after {
+        content: none!important;
+    }
+}

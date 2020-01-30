@@ -1,0 +1,33 @@
+@font-face{ 
+    font-family: Assistant;
+    src: url('../../assets/fonts/assistant300.woff') format('woff'),
+         url('../../assets/fonts/assistant300.woff2') format('woff2');
+    font-weight: 300;
+}
+
+@font-face{ 
+    font-family: Assistant;
+    src: url('../../assets/fonts/assistant400.woff') format('woff'),
+         url('../../assets/fonts/assistant400.woff2') format('woff2');
+    font-weight: 400;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: #b4b4b3;
+    font-family: Assistant;
+}
+
+.dashboard {
+    display: flex;
+    
+}
+
+.dashboard_container {
+    padding: 10px 10px 10px 0;
+    box-sizing: border-box;
+    flex: 1;
+    margin-left: 50px;
+}
